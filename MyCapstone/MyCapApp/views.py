@@ -4,10 +4,24 @@ from .models import HousingData
 from .serializers import HousingDataSerializer
 from rest_framework.views import APIView
 from rest_framework.views import Response
-from rest_framework.views import status
+from rest_framework import status
+
+from rest_framework import status
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework.decorators import api_view, permission_classes
+from .models import HousingData
+from .serializers import HousingDataSerializer
+from django.contrib.auth.models import User
+
+
 
 # Create your views here.
 class HousingDataList(APIView):
+
+    permission_classes = [AllowAny]
+    # change to [IsAuthenticated for saved data shopping cart model where reqs userId]
     
     def get(self, request):
         stats = HousingData.objects.all()

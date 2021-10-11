@@ -9,3 +9,5 @@ class HousingDataSerializer(serializers.ModelSerializer):
         fields = ['id', 'sizeRank', 'country', 'state', 'city', 
         'rent1YearAvg', 'rent5YearAvg', 'value1YearAvg','value5YearAvg',]
         
+        # add 'user_id' ??
+
