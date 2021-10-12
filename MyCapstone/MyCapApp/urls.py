@@ -5,6 +5,7 @@ from .views import HousingDataList
 
 urlpatterns = [
     path('MyCapApp/', views.HousingDataList.as_view()),
-    path('MyCapApp/<int:pk>/', views.HousingDataDetail.as_view()),
+    path('MyCapApp/', views.HousingDataDetail.as_view()),
+    # path('MyCapApp/<int:pk>/', views.HousingDataDetail.as_view()),
 ]
 
