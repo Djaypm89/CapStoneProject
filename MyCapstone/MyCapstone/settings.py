@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'MyCapApp',
+    'MyCapApp.apps.MycapappConfig',
+    # line above previously: 'MyCapApp'
     'authentication.apps.AuthenticationConfig',
 ]
 

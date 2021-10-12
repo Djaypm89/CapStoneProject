@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='housingdata',
             name='sizeRank',
-            field=models.IntegerField(default=0, max_length=50),
+            field=models.IntegerField(null=True, max_length=50),
             preserve_default=False,
         ),
         migrations.AlterField(
