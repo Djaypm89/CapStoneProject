@@ -24,3 +24,5 @@ class Migration(migrations.Migration):
             ],
         ),
     ]
+# update above to current field names? will that properly orient the table?  
+# does it matter at this point?

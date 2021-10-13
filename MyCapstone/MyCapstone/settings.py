@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'MyCapApp.apps.MycapappConfig',
     # line above previously: 'MyCapApp'
     'authentication.apps.AuthenticationConfig',
-]
+    'carts.apps.CartConfig',
+    ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

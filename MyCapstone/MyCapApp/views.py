@@ -1,10 +1,5 @@
 from django.http.response import Http404
 from rest_framework import serializers
-from .models import HousingData
-from .serializers import HousingDataSerializer
-from rest_framework.views import APIView
-from rest_framework.views import Response
-from rest_framework import status
 
 from rest_framework import status
 from rest_framework.views import APIView
@@ -13,6 +8,8 @@ from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.decorators import api_view, permission_classes
 from .models import HousingData
 from .serializers import HousingDataSerializer
+# from .models import DataCart
+# from .serializers import DataCartSerializer
 from django.contrib.auth.models import User
 
 
@@ -61,3 +58,14 @@ class HousingDataDetail(APIView):
         housingdata = self.get_object(pk)
         housingdata.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+# class DataCartList(APIView):
+
+#     permission_classes = [AllowAny]
+#     # change to [IsAuthenticated for saved data shopping cart model where reqs userId]
+    
+#     def get(self, request):
+#         stats = DataCart.objects.all()
+#         serializer = DataCartSerializer(DataCart, many=True)
+#         return Response(serializer.data)
