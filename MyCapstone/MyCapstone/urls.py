@@ -18,11 +18,8 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('MyCapApp.urls')),
+    path('api/housingdata/', include('MyCapApp.urls')),
+    # path('api/housingdatadetail/', include('MyCapApp.urls')),
     path('api/auth/', include('authentication.urls')),
-    # path('api/MyCapApp/', include('MyCapApp.urls')),
-    
-    # path('api/MyCapApp/', include('DataCart.urls'))
-
-    # path('api/auth/', include('authentication.urls')),     use this for the shopping cart model and log in 
+    path('api/carts/', include('carts.urls'))
 ]
