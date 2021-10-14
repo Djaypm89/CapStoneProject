@@ -20,7 +20,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # path('api/', include('api.urls')),
     path('housingdata/', include('MyCapApp.urls')),
-    #path('MyCapApp/housingdatadetail/', include('MyCapApp.urls')),
-    path('api/auth/', include('authentication.urls')),
+    # path('housingdatadetail/', include('MyCapApp.urls')),
+    path('auth/', include('authentication.urls')),
     path('carts/', include('carts.urls')),
 ]
