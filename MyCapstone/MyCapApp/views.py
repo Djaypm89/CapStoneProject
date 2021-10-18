@@ -38,6 +38,7 @@ class HousingDataList(APIView):
 
         if lower_price:
             qs = qs.filter(rent1YearAvg__gte=lower_price)
+            # modify and/or and more?
 
 
         serializer = HousingDataSerializer(qs, many=True)
