@@ -8,13 +8,10 @@ from django.contrib import admin
 from django.urls import path, include
 
 
-
-
-
 urlpatterns = [
-    path('MyCapApp/', views.HousingDataList.as_view()),
+    path('', views.HousingDataList.as_view()),
     # path('MyCapAppDetails/', views.HousingDataDetail.as_view()),
-    path('MyCapApp/', views.HousingDataDetail.as_view()),
+    path('<int:pk>/', views.HousingDataDetail.as_view()),
 
 ]
 

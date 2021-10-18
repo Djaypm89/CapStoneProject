@@ -16,13 +16,31 @@ from django.contrib.auth.models import User
 
 # Create your views here.
 class HousingDataList(APIView):
-
+    
     permission_classes = [AllowAny]
     # change to [IsAuthenticated for saved data shopping cart model where reqs userId]
     
     def get(self, request):
-        stats = HousingData.objects.all()
-        serializer = HousingDataSerializer(stats, many=True)
+        qs = HousingData.objects.all()
+        country = request.GET.get('country')
+        state = request.GET.get('state')
+        city = request.GET.get('city')
+        lower_price = request.GET.get('lower')
+
+        if city:
+            qs = qs.filter(city=city)
+
+        if state:
+            qs = qs.filter(state=state)
+        
+        if country:
+            qs = qs.filter(country=country)
+
+        if lower_price:
+            qs = qs.filter(rent1YearAvg__gte=lower_price)
+
+
+        serializer = HousingDataSerializer(qs, many=True)
         return Response(serializer.data)
 
     def post(self, request):

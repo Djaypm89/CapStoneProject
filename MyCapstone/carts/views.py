@@ -10,9 +10,10 @@ from django.contrib.auth.models import User
 # Create your views here.
 class CartList(APIView):
 
-    permission_classes = [AllowAny]
-    # change to [IsAuthenticated for saved data shopping cart model where reqs userId]
-    
+    # permission_classes = [IsAuthenticated,]
+    permission_classes = [AllowAny,]
+
+
     def get(self, request):
         carts = Cart.objects.all()
         serializer = CartSerializer(carts, many=True)
